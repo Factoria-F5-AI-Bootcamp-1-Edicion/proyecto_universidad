@@ -31,7 +31,6 @@ class Settings:
     # Esquema general de Conexión a cualquier base de dats SQL:
     # Construccion de URL de Conexion de la BBDD -->
     # nombre_gestorBD + driver_propio_gestorBD ://user:password@hostIP:puerto/nombre_BaseDatos'
-    #DATABASE_URL = "postgresql+psycopg2://admin_f5:otr4_c0ntr4s3n4_nu3v4@13.38.159.23/FastApi_stph"
 
     DATABASE_URL = f"postgresql+psycopg2://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_SERVER}:{POSTGRES_PORT}/{POSTGRES_DB}"
 
