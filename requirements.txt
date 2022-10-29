@@ -1,0 +1,12 @@
+sqlalchemy~=1.4.42
+fastapi~=0.54.2
+pydantic~=1.10.2
+dotenv~=0.0.5
+passlib~=1.7.4
+celery~=4.4.7
+pytest~=5.4.3
+starlette~=0.13.2
+emails~=0.5.15
+raven~=6.10.0
+tenacity~=6.3.1
+alembic~=1.8.1
