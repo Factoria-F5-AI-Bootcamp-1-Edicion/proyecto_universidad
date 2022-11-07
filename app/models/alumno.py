@@ -13,10 +13,10 @@ if TYPE_CHECKING:
 class Alumno(Base):
     id = Column(Integer, primary_key=True, index=True)
     nombre = Column(String, index=True)
-    apedillo1 = Column(String, index=True)
-    apedillo2 = Column(String, index=True)
+    apedillo_1 = Column(String, index=True)
+    apedillo_2 = Column(String, index=True)
     edad = Column(String, index=True)
-    # email = Column(String, unique=True, index=True, nullable=False)
+    email = Column(String, unique=True, index=True, nullable=False)
     # hashed_password = Column(String, nullable=False)
     # is_active = Column(Boolean(), default=True)
     # is_superuser = Column(Boolean(), default=False)

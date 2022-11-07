@@ -1,6 +1,9 @@
 from .crud_item import item
 from .crud_user import user
 from .crud_profesor import profesor
+from .crud_alumno import alumno
+from .crud_asignatura import asignatura
+
 
 # For a new basic set of CRUD operations you could just do
 

@@ -121,7 +121,7 @@ def create_profesor_open(
             detail="The profesor with this profesorname already exists in the system",
         )
     profesor_in = schemas.ProfesorCreate(email=email, nombre=nombre, apedillo_1=apedillo_1,
-                                         apedillo_2=apedillo_2, edad=edad) # password=password,
+                                         apedillo_2=apedillo_2, edad=edad)  # password=password,
     profesor = crud.profesor.create(db, obj_in=profesor_in)
     return profesor
 
@@ -163,4 +163,23 @@ def update_profesor(
             detail="The profesor with this profesorname does not exist in the system",
         )
     profesor = crud.profesor.update(db, db_obj=profesor, obj_in=profesor_in)
+    return profesor
+
+
+@router.delete("/{profesor_id}", response_model=schemas.Profesor)
+def delete_profesor(
+        *,
+        db: Session = Depends(deps.get_db),
+        id: int,
+        current_user: models.User = Depends(deps.get_current_active_user),
+) -> Any:
+    """
+    Delete an item.
+    """
+    profesor = crud.profesor.get(db=db, id=id)
+    if not profesor:
+        raise HTTPException(status_code=404, detail="Item not found")
+    # if not crud.profesor.is_superuser(current_user) and (profesor.owner_id != current_user.id):
+    #     raise HTTPException(status_code=400, detail="Not enough permissions")
+    profesor = crud.profesor.remove(db=db, id=id)
     return profesor

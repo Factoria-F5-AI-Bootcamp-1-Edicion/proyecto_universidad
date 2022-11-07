@@ -6,7 +6,7 @@ from sqlalchemy.orm import relationship
 from app.db.base_class import Base
 
 if TYPE_CHECKING:
-    from .profesor import Profesor  # noqa: F401
+    from .ensena import Ensena  # noqa: F401
 
 
 class Profesor(Base):
@@ -16,6 +16,7 @@ class Profesor(Base):
     apedillo_2 = Column(String, index=True)
     edad = Column(String, index=True)
     email = Column(String, unique=True, index=True, nullable=False)
+    owner = relationship("Asignatura", secondary=Ensena)
 
     # hashed_password = Column(String, nullable=False)
     # is_active = Column(Boolean(), default=True)
