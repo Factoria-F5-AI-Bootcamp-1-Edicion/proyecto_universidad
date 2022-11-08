@@ -27,7 +27,7 @@
 
 **1**. Descargar este repositorio:
 
-git@github.com:Factoria-F5-AI-Bootcamp-1-Edicion/proyecto_universidad.git
+[GitHub](git@github.com:Factoria-F5-AI-Bootcamp-1-Edicion/proyecto_universidad.git)
 
 **2**. Instalar todos los paquetes y librerias del file:
 
