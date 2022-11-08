@@ -23,6 +23,21 @@
 - Notion
 - Pytest
 
+## Pasos Básicos para funcionamiento de neustra API Rest
+
+**1**. Descargar este repositorio 
+
+**2**. Instalar todos los paquetes y librerias del file requirements.txt
+
+**3**. Correr el comando de conexión con la base de datos.
+`alembic upgrade head`
+
+**4**. Correr el comando para visualizar el API y su documentación en Swagger
+`uvicorn app.main:app --reload`
+
+**5**. Crear un usuario o utilizar los *endpoints* sin usuario.
+
+
 ## Metología Ágil 
 
 Para el Desarrollo de este Proyecto, organización de tareas y el equipo con metodología SCRUM.
