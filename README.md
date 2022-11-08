@@ -2,11 +2,11 @@
 
 # Universidad Online F5
 
-Somos el equipo de desarrolladores de Base de Datos y su API rest de la Universidad Online Factoria F5.
 
-## Planteamiento
 
-- Diseño de una Base de Datos Relacionales SQL y desarrollo de la API REST con el Framework de FastApi. 
+## Nuestro Proyecto
+
+- Diseño de una Base de Datos Relacionales SQL y desarrollo de una API REST para la creación consulta, actualización y eliminación de contenido de la base de datos relacional; con el Framework de FastApi y securización con OAuth2 y JWT. 
 - Backend base para una futura implementación en Frontend con la tecnología Angular.
 
 
@@ -30,6 +30,8 @@ Para el Desarrollo de este Proyecto, organización de tareas y el equipo con met
 - [Jira](https://apiproyectouniversidad.atlassian.net/jira/software/projects/PUA/boards/1) 
 
 ## Desarrolladores:
+
+Somos el equipo de desarrolladores de Base de Datos y su API rest de la Universidad Online Factoria F5.
 
 - Anghi Sanchez
 - Wenya Li
