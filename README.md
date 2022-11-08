@@ -25,14 +25,20 @@
 
 ## Pasos Básicos para funcionamiento de neustra API Rest
 
-**1**. Descargar este repositorio 
+**1**. Descargar este repositorio:
 
-**2**. Instalar todos los paquetes y librerias del file requirements.txt
+git@github.com:Factoria-F5-AI-Bootcamp-1-Edicion/proyecto_universidad.git
 
-**3**. Correr el comando de conexión con la base de datos.
+**2**. Instalar todos los paquetes y librerias del file:
+
+`requirements.txt
+
+**3**. Correr el comando de conexión con la base de datos:
+
 `alembic upgrade head`
 
-**4**. Correr el comando para visualizar el API y su documentación en Swagger
+**4**. Correr el comando para visualizar el API y su documentación en Swagger:
+
 `uvicorn app.main:app --reload`
 
 **5**. Crear un usuario o utilizar los *endpoints* sin usuario.
