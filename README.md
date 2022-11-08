@@ -31,7 +31,7 @@
 
 **2**. Instalar todos los paquetes y librerias del file:
 
-`requirements.txt
+`requirements.txt`
 
 **3**. Correr el comando de conexión con la base de datos:
 
