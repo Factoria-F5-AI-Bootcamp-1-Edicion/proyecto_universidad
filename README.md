@@ -23,7 +23,9 @@ Somos el equipo de desarrolladores de Base de Datos y su API rest de la Universi
 - Notion
 - Pytest
 
-## Metología Ágil para le Desarrollo de este Proyectop ara la organización de tareas y el equipo con metodología SCRUM.
+## Metología Ágil 
+
+Para el Desarrollo de este Proyecto, organización de tareas y el equipo con metodología SCRUM.
 
 - [Jira](https://apiproyectouniversidad.atlassian.net/jira/software/projects/PUA/boards/1) 
 
