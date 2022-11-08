@@ -1,4 +1,6 @@
-# Universidad Online F5
+![imagen](https://user-images.githubusercontent.com/110174766/200622165-764b812a-c86f-4ffc-823f-ba7d43db282e.png)
+
+#Universidad Online F5
 
 Somos el equipo de desarrolladores de Base de Datos y su API rest de la Universidad Online Factoria F5.
 
@@ -7,7 +9,7 @@ Somos el equipo de desarrolladores de Base de Datos y su API rest de la Universi
 - Diseño de una Base de Datos Relacionales SQL y desarrollo de la API REST con el Framework de FastApi. 
 - Backend base para una futura implementación en Frontend con la tecnología Angular.
 
-Captura de pantalla 2022-11-08 a las 17.32.10![imagen](https://user-images.githubusercontent.com/110174766/200622165-764b812a-c86f-4ffc-823f-ba7d43db282e.png)
+
 
 
 ## Tecnologías aplicadas
