@@ -27,7 +27,8 @@
 
 **1**. Descargar este repositorio:
 
-[GitHub](git@github.com:Factoria-F5-AI-Bootcamp-1-Edicion/proyecto_universidad.git)
+- [Jira](https://apiproyectouniversidad.atlassian.net/jira/software/projects/PUA/boards/1) 
+[GitHub](https://github.com/Factoria-F5-AI-Bootcamp-1-Edicion/proyecto_universidad/edit/main/README.md)
 
 **2**. Instalar todos los paquetes y librerias del file:
 
