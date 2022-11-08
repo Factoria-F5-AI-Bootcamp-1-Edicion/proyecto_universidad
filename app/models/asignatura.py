@@ -13,8 +13,8 @@ if TYPE_CHECKING:
 class Asignatura(Base):
     id = Column(Integer, primary_key=True, index=True)
     nombre_asignatura = Column(String, index=True)
-    profesor_id = Column(Integer, ForeignKey("profesor.id"))
-    owner = relationship("Profesor", secondary=Ensena)
+    # profesor_id = Column(Integer, ForeignKey("profesor.id"))
+    # owner = relationship("Profesor", secondary=Ensena)
 
     # edad = Column(String, index=True)
     # email = Column(String, unique=True, index=True, nullable=False)

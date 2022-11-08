@@ -18,7 +18,7 @@ def read_profesores(
         db: Session = Depends(deps.get_db),
         skip: int = 0,
         limit: int = 100,
-        current_user: models.User = Depends(deps.get_current_active_superuser),
+        current_user: models.User = Depends(deps.get_current_active_user), #get_current_active_superuser
 ) -> Any:
     """
     Retrieve profesores.

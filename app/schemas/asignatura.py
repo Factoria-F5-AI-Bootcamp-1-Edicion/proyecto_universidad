@@ -23,7 +23,7 @@ class AsignaturaUpdate(AsignaturaBase):
 class AsignaturaInDBBase(AsignaturaBase):
     id: int
     nombre_asignatura: str
-    owner_id: int
+    # owner_id: int
 
     class Config:
         orm_mode = True

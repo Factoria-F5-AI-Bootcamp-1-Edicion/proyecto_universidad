@@ -10,10 +10,10 @@ from app.schemas.asignatura import AsignaturaCreate, AsignaturaUpdate
 
 class CRUDAsignatura(CRUDBase[Asignatura, AsignaturaCreate, AsignaturaUpdate]):
     def create_with_owner(
-        self, db: Session, *, obj_in: AsignaturaCreate, owner_id: int
+        self, db: Session, *, obj_in: AsignaturaCreate  #, owner_id: int
     ) -> Asignatura:
         obj_in_data = jsonable_encoder(obj_in)
-        db_obj = self.model(**obj_in_data, owner_id=owner_id)
+        db_obj = self.model(**obj_in_data) #, owner_id=owner_id
         db.add(db_obj)
         db.commit()
         db.refresh(db_obj)
@@ -24,7 +24,7 @@ class CRUDAsignatura(CRUDBase[Asignatura, AsignaturaCreate, AsignaturaUpdate]):
     ) -> List[Asignatura]:
         return (
             db.query(self.model)
-            .filter(Asignatura.owner_id == owner_id)
+            # .filter(Asignatura.owner_id == owner_id)
             .offset(skip)
             .limit(limit)
             .all()

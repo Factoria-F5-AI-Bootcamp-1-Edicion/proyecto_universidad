@@ -16,7 +16,7 @@ class Profesor(Base):
     apedillo_2 = Column(String, index=True)
     edad = Column(String, index=True)
     email = Column(String, unique=True, index=True, nullable=False)
-    owner = relationship("Asignatura", secondary=Ensena)
+    # owner = relationship("Asignatura", secondary=Ensena)
 
     # hashed_password = Column(String, nullable=False)
     # is_active = Column(Boolean(), default=True)

@@ -19,12 +19,14 @@ def read_asignaturas(
     """
     Retrieve asignaturas.
     """
-    if crud.user.is_superuser(current_user):
-        asignaturas = crud.asignatura.get_multi(db, skip=skip, limit=limit)
-    else:
-        asignaturas = crud.asignatura.get_multi_by_owner(
-            db=db, owner_id=current_user.id, skip=skip, limit=limit
-        )
+    asignaturas = crud.asignatura.get_multi(db, skip=skip, limit=limit)
+
+    # if crud.user.is_superuser(current_user):
+    #     asignaturas = crud.asignatura.get_multi(db, skip=skip, limit=limit)
+    # else:
+    #     asignaturas = crud.asignatura.get_multi_by_owner(
+    #         db=db, owner_id=current_user.id, skip=skip, limit=limit
+    #     )
     return asignaturas
 
 
@@ -38,7 +40,7 @@ def create_asignatura(
     """
     Create new asignatura.
     """
-    asignatura = crud.asignatura.create_with_owner(db=db, obj_in=asignatura_in, owner_id=current_user.id)
+    asignatura = crud.asignatura.create_with_owner(db=db, obj_in=asignatura_in) #, owner_id=current_user.id
     return asignatura
 
 
@@ -56,8 +58,8 @@ def update_asignatura(
     asignatura = crud.asignatura.get(db=db, id=id)
     if not asignatura:
         raise HTTPException(status_code=404, detail="Asignatura not found")
-    if not crud.user.is_superuser(current_user) and (asignatura.owner_id != current_user.id):
-        raise HTTPException(status_code=400, detail="Not enough permissions")
+    # if not crud.user.is_superuser(current_user) : # and (asignatura.owner_id != current_user.id)
+    #     raise HTTPException(status_code=400, detail="Not enough permissions")
     asignatura = crud.asignatura.update(db=db, db_obj=asignatura, obj_in=asignatura_in)
     return asignatura
 
@@ -75,8 +77,8 @@ def read_asignatura(
     asignatura = crud.asignatura.get(db=db, id=id)
     if not asignatura:
         raise HTTPException(status_code=404, detail="Asignatura not found")
-    if not crud.user.is_superuser(current_user) and (asignatura.owner_id != current_user.id):
-        raise HTTPException(status_code=400, detail="Not enough permissions")
+    # if not crud.user.is_superuser(current_user) : # and (asignatura.owner_id != current_user.id)
+    #     raise HTTPException(status_code=400, detail="Not enough permissions")
     return asignatura
 
 
@@ -93,7 +95,7 @@ def delete_asignatura(
     asignatura = crud.asignatura.get(db=db, id=id)
     if not asignatura:
         raise HTTPException(status_code=404, detail="Asignatura not found")
-    if not crud.user.is_superuser(current_user) and (asignatura.owner_id != current_user.id):
-        raise HTTPException(status_code=400, detail="Not enough permissions")
+    # if not crud.user.is_superuser(current_user) : # and (asignatura.owner_id != current_user.id)
+    #     raise HTTPException(status_code=400, detail="Not enough permissions")
     asignatura = crud.asignatura.remove(db=db, id=id)
     return asignatura
