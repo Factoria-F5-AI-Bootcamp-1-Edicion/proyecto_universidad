@@ -5,21 +5,20 @@ from sqlalchemy.orm import relationship
 
 from app.db.base_class import Base
 from .profesor import Profesor
+from .matricula import matricula  # noqa: F401
+from .ensena import ensena  # noqa: F401
+
+#from .alumno import Alumno  # noqa: F401
 
 if TYPE_CHECKING:
-    from .ensena import Ensena  # noqa: F401
+    from .ensena import ensena  # noqa: F401
+    from .matricula import matricula  # noqa: F401
 
 
 class Asignatura(Base):
     id = Column(Integer, primary_key=True, index=True)
     nombre_asignatura = Column(String, index=True)
-    # profesor_id = Column(Integer, ForeignKey("profesor.id"))
-    # owner = relationship("Profesor", secondary=Ensena)
 
-    # edad = Column(String, index=True)
-    # email = Column(String, unique=True, index=True, nullable=False)
-    # hashed_password = Column(String, nullable=False)
-    # is_active = Column(Boolean(), default=True)
-    # is_superuser = Column(Boolean(), default=False)
+    alumnos = relationship("Alumno", secondary="matricula", back_populates='asignaturas_alumnos')
 
-    # is_open = Column(Boolean(), default=True)
+    profesores = relationship("Profesor", secondary="ensena", back_populates='asignaturas_profes')

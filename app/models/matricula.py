@@ -9,8 +9,10 @@ if TYPE_CHECKING:
 
 
 # Creacion de tabla intermedia para relacion many to many de productos y orders
-matricula = Table('products_orders', Base.metadata,
-    Column('id', Integer, primary_key=True, index=True),
-    Column('Alumno_id', Integer, ForeignKey('Alumno.id')),
-    Column('Asignatura_id', Integer, ForeignKey('Asignatura.id'))
+
+matricula = Table(
+    "matricula",
+    Base.metadata,
+    Column("Alumno_id", ForeignKey("alumno.id"), primary_key=True),
+    Column("Asignatura_id", ForeignKey("asignatura.id"), primary_key=True),
 )

@@ -4,10 +4,13 @@ from sqlalchemy import Boolean, Column, Integer, String,ForeignKey
 from sqlalchemy.orm import relationship
 
 from app.db.base_class import Base
-from .profesor import Profesor
+from .matricula import matricula  # noqa: F401
+from .asignatura import Asignatura  # noqa: F401
 
 if TYPE_CHECKING:
-    from .item import Item  # noqa: F401
+    from .matricula import matricula  # noqa: F401
+    from .asignatura import Asignatura  # noqa: F401
+
 
 
 class Alumno(Base):
@@ -17,7 +20,7 @@ class Alumno(Base):
     apedillo_2 = Column(String, index=True)
     edad = Column(String, index=True)
     email = Column(String, unique=True, index=True, nullable=False)
-    # hashed_password = Column(String, nullable=False)
-    # is_active = Column(Boolean(), default=True)
-    # is_superuser = Column(Boolean(), default=False)
-    # asignatura = relationship("Item", back_populates="owner")
+
+    asignaturas_alumnos = relationship("Asignatura", secondary="matricula", back_populates='alumnos')
+
+

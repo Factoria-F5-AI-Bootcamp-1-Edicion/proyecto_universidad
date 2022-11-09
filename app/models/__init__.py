@@ -1,7 +1,8 @@
 from .item import Item
 from .user import User
-from .profesor import Profesor
-from .alumno import Alumno
 from .asignatura import Asignatura
+from app.models.alumno import Alumno
+from .matricula import matricula
+from .profesor import Profesor
 
 
