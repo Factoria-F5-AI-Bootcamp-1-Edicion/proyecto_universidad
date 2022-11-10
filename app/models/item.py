@@ -13,5 +13,5 @@ class Item(Base):
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String, index=True)
     description = Column(String, index=True)
-    owner_id = Column(Integer, ForeignKey("user.id"))
+    owner_id = Column(Integer, ForeignKey("user.id")) #no es necesario declarar este owner_id???
     owner = relationship("User", back_populates="items")

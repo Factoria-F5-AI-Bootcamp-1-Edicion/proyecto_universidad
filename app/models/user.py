@@ -8,6 +8,7 @@ from app.db.base_class import Base
 if TYPE_CHECKING:
     from .item import Item  # noqa: F401
 
+#Se peude borrar user e item una vez funcione
 
 class User(Base):
     id = Column(Integer, primary_key=True, index=True)

@@ -12,7 +12,10 @@ if TYPE_CHECKING:
     from .asignatura import Asignatura  # noqa: F401
 
 
+"""
+Declaramos la Clase Alumno
 
+"""
 class Alumno(Base):
     id = Column(Integer, primary_key=True, index=True)
     nombre = Column(String, index=True)
@@ -24,3 +27,17 @@ class Alumno(Base):
     asignaturas_alumnos = relationship("Asignatura", secondary="matricula", back_populates='alumnos')
 
 
+"""
+    El atributo o propiedad asignatura_profes es lo que nos permitira 
+    relacionar la entidad profesor con la entidad Asignatura a través de 
+    la tabla intermdeia ensena, en una relacion bidireccional entre asignatura y profesor.
+
+    relationship-->Entidad con la que se relaciona
+    secondary----->tabla intermedia o asociativa
+    back_populates---->bidireccionalidad de la relacion: 
+                        asignaturas_alumnos -----> atributo de la entidad Alumnos
+                        asignaturas_profes -----> atributo de la entidad Profesores
+                        alumnos----> atributo de la entidad Asignatura
+                        profesores----> atributo de la entidad Asignatura
+
+    """
