@@ -41,7 +41,7 @@ def create_profesores(
     if profesor:
         raise HTTPException(
             status_code=400,
-            detail="The profesor with this profesorname already exists in the system.",
+            detail="The profesor with this profesor name already exists in the system.",
         )
     profesor = crud.profesor.create(db, obj_in=profesor_in)
     if settings.EMAILS_ENABLED and profesor_in.email:
@@ -160,7 +160,7 @@ def update_profesor(
     if not profesor:
         raise HTTPException(
             status_code=404,
-            detail="The profesor with this profesorname does not exist in the system",
+            detail="The profesor with this profesor name does not exist in the system",
         )
     profesor = crud.profesor.update(db, db_obj=profesor, obj_in=profesor_in)
     return profesor

@@ -118,7 +118,7 @@ def create_alumno_open(
     if alumno:
         raise HTTPException(
             status_code=400,
-            detail="The alumno with this alumnoname already exists in the system",
+            detail="The alumno with this alumno name already exists in the system",
         )
     alumno_in = schemas.AlumnoCreate(email=email, nombre=nombre, apedillo_1=apedillo_1,
                                          apedillo_2=apedillo_2, edad=edad)  # password=password,
@@ -160,7 +160,7 @@ def update_alumno(
     if not alumno:
         raise HTTPException(
             status_code=404,
-            detail="The alumno with this alumnoname does not exist in the system",
+            detail="The alumno with this alumno name does not exist in the system",
         )
     alumno = crud.alumno.update(db, db_obj=alumno, obj_in=alumno_in)
     return alumno
