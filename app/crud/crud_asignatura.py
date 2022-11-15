@@ -7,6 +7,8 @@ from app.crud.base import CRUDBase
 from app.models.asignatura import Asignatura
 from app.schemas.asignatura import AsignaturaCreate, AsignaturaUpdate
 
+"""Clase CRUDAsignatura--->Hereda de CRUDBase----> Se definen los métodos básicos del CRUD --->get, create, update, delete
+ Esta clase será importada y llamada por cada entidad donde se configuraran las rutas o endpoints"""
 
 class CRUDAsignatura(CRUDBase[Asignatura, AsignaturaCreate, AsignaturaUpdate]):
     def create_with_owner(
@@ -31,4 +33,4 @@ class CRUDAsignatura(CRUDBase[Asignatura, AsignaturaCreate, AsignaturaUpdate]):
         )
 
 
-asignatura = CRUDAsignatura(Asignatura)
+asignatura = CRUDAsignatura(Asignatura) #Éste será llamado en los endpoints para crear cada ruta o endpoint para cada entidad

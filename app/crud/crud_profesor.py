@@ -7,6 +7,8 @@ from app.crud.base import CRUDBase
 from app.models.profesor import Profesor
 from app.schemas.profesor import ProfesorCreate, ProfesorUpdate
 
+"""Clase CRUDProfesor--->Hereda de CRUDBase----> Se definen los métodos básicos del CRUD --->get, create, update, delete
+ Esta clase será importada y llamada por cada entidad donde se configuraran las rutas o endpoints"""
 
 class CRUDProfesor(CRUDBase[Profesor, ProfesorCreate, ProfesorUpdate]):
     def get_by_email(self, db: Session, *, email: str) -> Optional[Profesor]:
@@ -55,4 +57,8 @@ class CRUDProfesor(CRUDBase[Profesor, ProfesorCreate, ProfesorUpdate]):
     #     return profesor.is_superprofesor
 
 
-profesor = CRUDProfesor(Profesor)
+profesor = CRUDProfesor(Profesor) #Éste será llamado en los endpoints para crear cada ruta o endpoint para cada entidad
+
+"""NOTA: Las líneas de código comentadas serán implemenatdas en un futuro para 
+definirir super usuarios, administradores principales y hashed password para reforzar 
+la autenticación y seguridad del API"""

@@ -7,6 +7,8 @@ from app.crud.base import CRUDBase
 from app.models.user import User
 from app.schemas.user import UserCreate, UserUpdate
 
+"""Clase CRUDUser--->Hereda de CRUDBase----> Se definen los métodos básicos del CRUD --->get, create, update, delete
+ Esta clase será importada y llamada por cada entidad donde se configuraran las rutas o endpoints"""
 
 class CRUDUser(CRUDBase[User, UserCreate, UserUpdate]):
     def get_by_email(self, db: Session, *, email: str) -> Optional[User]:
@@ -52,4 +54,4 @@ class CRUDUser(CRUDBase[User, UserCreate, UserUpdate]):
         return user.is_superuser
 
 
-user = CRUDUser(User)
+user = CRUDUser(User) #Éste será llamado en los endpoints para crear cada ruta o endpoint para cada entidad

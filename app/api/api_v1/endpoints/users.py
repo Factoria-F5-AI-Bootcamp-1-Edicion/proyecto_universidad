@@ -151,3 +151,8 @@ def update_user(
         )
     user = crud.user.update(db, db_obj=user, obj_in=user_in)
     return user
+
+"""---> El `current_user` se obtiene, sólo si este usuario está activo.
+----> El `get_current_active_user` que a su vez utiliza `get_current_user` como dependencia, 
+devolverán un error HTTP si el usuario no existe, o si está inactivo.
+----> Sólo obtendremos un usuario si el usuario existe, fue correctamente autenticado, y está activo."""

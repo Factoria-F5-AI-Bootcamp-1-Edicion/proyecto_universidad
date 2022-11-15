@@ -7,6 +7,8 @@ from app.crud.base import CRUDBase
 from app.models.alumno import Alumno
 from app.schemas.alumno import AlumnoCreate, AlumnoUpdate
 
+"""Clase CRUDAlumno--->Hereda de CRUDBase----> Se definen los métodos básicos del CRUD --->get, create, update, delete
+ Esta clase será importada y llamada por cada entidad donde se configuraran las rutas o endpoints"""
 
 class CRUDAlumno(CRUDBase[Alumno, AlumnoCreate, AlumnoUpdate]):
     def get_by_email(self, db: Session, *, email: str) -> Optional[Alumno]:
@@ -55,4 +57,10 @@ class CRUDAlumno(CRUDBase[Alumno, AlumnoCreate, AlumnoUpdate]):
     #     return alumno.is_superalumno
 
 
-alumno = CRUDAlumno(Alumno)
+alumno = CRUDAlumno(Alumno) #Éste será llamado en los endpoints para crear cada ruta o endpoint para cada entidad
+
+
+
+"""NOTA: Las líneas de código comentadas serán implemenatdas en un futuro para 
+definirir super usuarios, administradores principales y hashed password para reforzar 
+la autenticación y seguridad del API"""

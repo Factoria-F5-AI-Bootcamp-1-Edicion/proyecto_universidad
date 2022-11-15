@@ -7,6 +7,10 @@ from app.crud.base import CRUDBase
 from app.models.item import Item
 from app.schemas.item import ItemCreate, ItemUpdate
 
+#Modelo base para el CRUD, models, schemas y endpoints)
+
+"""Clase CRUDItem--->Hereda de CRUDBase----> Se definen los métodos básicos del CRUD --->get, create, update, delete
+ Esta clase será importada y llamada por cada entidad donde se configuraran las rutas o endpoints"""
 
 class CRUDItem(CRUDBase[Item, ItemCreate, ItemUpdate]):
     def create_with_owner(

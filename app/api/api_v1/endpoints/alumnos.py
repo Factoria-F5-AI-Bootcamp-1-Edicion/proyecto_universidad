@@ -118,7 +118,7 @@ def create_alumno_open(
     if alumno:
         raise HTTPException(
             status_code=400,
-            detail="The alumno with this alumno name already exists in the system",
+            detail="The alumno with this alumno email already exists in the system",
         )
     alumno_in = schemas.AlumnoCreate(email=email, nombre=nombre, apedillo_1=apedillo_1,
                                          apedillo_2=apedillo_2, edad=edad)  # password=password,
