@@ -4,3 +4,4 @@ htmlcov
 .env
 .idea
 .pyc
+**/__pycache__

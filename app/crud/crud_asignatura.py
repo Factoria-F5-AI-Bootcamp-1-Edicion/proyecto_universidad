@@ -1,9 +1,10 @@
 from typing import List
 
 from fastapi.encoders import jsonable_encoder
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 
 from app.crud.base import CRUDBase
+from app.models import Ensena
 from app.models.asignatura import Asignatura
 from app.schemas.asignatura import AsignaturaCreate, AsignaturaUpdate
 
@@ -28,6 +29,24 @@ class CRUDAsignatura(CRUDBase[Asignatura, AsignaturaCreate, AsignaturaUpdate]):
             .offset(skip)
             .limit(limit)
             .all()
+        )
+
+    def get_multi_by_profesor(
+            self, db: Session, *, owner_id: int, skip: int = 0, limit: int = 100
+    ) -> List[Asignatura]:
+        return (
+            db.query(self.model)
+            .options(
+                joinedload(Asignatura.profesores).options(
+                    joinedload(Ensena.profesor)
+                )
+            )
+            .filter(Asignatura.id == id)
+            .one()
+            # .filter(Asignatura.owner_id == owner_id)
+            # .offset(skip)
+            # .limit(limit)
+            # .all()
         )
 
 

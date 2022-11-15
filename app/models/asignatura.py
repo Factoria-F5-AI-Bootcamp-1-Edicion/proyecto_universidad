@@ -13,6 +13,8 @@ if TYPE_CHECKING:
 class Asignatura(Base):
     id = Column(Integer, primary_key=True, index=True)
     nombre_asignatura = Column(String, index=True)
+    profesores = relationship("Ensena", back_populates="asignatura")
+
     # profesor_id = Column(Integer, ForeignKey("profesor.id"))
     # owner = relationship("Profesor", secondary=Ensena)
 
