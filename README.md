@@ -1,4 +1,4 @@
-<img src="https://github.com/Factoria-F5-AI-Bootcamp-1-Edicion/proyecto_universidad/blob/feature/login_and_profesor/logo-color.png" width="150px"><img src="https://user-images.githubusercontent.com/110174766/200622165-764b812a-c86f-4ffc-823f-ba7d43db282e.png" width="850px">
+<img src="https://github.com/Factoria-F5-AI-Bootcamp-1-Edicion/proyecto_universidad/blob/feature/login_and_profesor/logo-color.png" width="150px"><img src="https://user-images.githubusercontent.com/110174766/200622165-764b812a-c86f-4ffc-823f-ba7d43db282e.png" width="700px">
 
 # Universidad Online F5
 API rest para la plataforma de una universidad en línea, utilizando el Framework de FastApi [Tiangolo's FastAPI](https://fastapi.tiangolo.com/), el cual conecta una base de datos PostgreSQL a través del ORM SQLAlchemy. 
