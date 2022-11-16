@@ -24,7 +24,8 @@ def login_access_token(
     db: Session = Depends(deps.get_db), form_data: OAuth2PasswordRequestForm = Depends()
 ) -> Any:
     """
-    OAuth2 compatible token login, get an access token for future requests
+    OAuth2 es compatible con el token del login,
+    este metodo permite tener acceso a través de token para futuras solicitudes
     """
     user = crud.user.authenticate(
         db, email=form_data.username, password=form_data.password
@@ -45,15 +46,15 @@ def login_access_token(
 @router.post("/login/test-token", response_model=schemas.User)
 def test_token(current_user: models.User = Depends(deps.get_current_user)) -> Any:
     """
-    Test access token
+    Test para el token para el acceso
     """
     return current_user
 
 
-@router.post("/password-recovery/{email}", response_model=schemas.Msg)
+@router.post("/recuperacion_password/{email}", response_model=schemas.Msg)
 def recover_password(email: str, db: Session = Depends(deps.get_db)) -> Any:
     """
-    Password Recovery
+    Recuperación de Password
     """
     user = crud.user.get_by_email(db, email=email)
 
@@ -69,14 +70,14 @@ def recover_password(email: str, db: Session = Depends(deps.get_db)) -> Any:
     return {"msg": "Password recovery email sent"}
 
 
-@router.post("/reset-password/", response_model=schemas.Msg)
+@router.post("/Generar_nuevo_password/", response_model=schemas.Msg)
 def reset_password(
     token: str = Body(...),
     new_password: str = Body(...),
     db: Session = Depends(deps.get_db),
 ) -> Any:
     """
-    Reset password
+    Generar un nuevo password.
     """
     email = verify_password_reset_token(token)
     if not email:

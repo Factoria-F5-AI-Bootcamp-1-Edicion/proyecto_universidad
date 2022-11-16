@@ -17,7 +17,7 @@ def read_items(
     current_user: models.User = Depends(deps.get_current_active_user),
 ) -> Any:
     """
-    Retrieve items.
+    Seleccionar items.
     """
     if crud.user.is_superuser(current_user):
         items = crud.item.get_multi(db, skip=skip, limit=limit)
@@ -36,7 +36,7 @@ def create_item(
     current_user: models.User = Depends(deps.get_current_active_user),
 ) -> Any:
     """
-    Create new item.
+    Crear un nuevo item.
     """
     item = crud.item.create_with_owner(db=db, obj_in=item_in, owner_id=current_user.id)
     return item
@@ -51,7 +51,7 @@ def update_item(
     current_user: models.User = Depends(deps.get_current_active_user),
 ) -> Any:
     """
-    Update an item.
+    Actualizar un item por ID.
     """
     item = crud.item.get(db=db, id=id)
     if not item:
@@ -70,7 +70,7 @@ def read_item(
     current_user: models.User = Depends(deps.get_current_active_user),
 ) -> Any:
     """
-    Get item by ID.
+    Seleccionar un item por ID.
     """
     item = crud.item.get(db=db, id=id)
     if not item:
@@ -88,7 +88,7 @@ def delete_item(
     current_user: models.User = Depends(deps.get_current_active_user),
 ) -> Any:
     """
-    Delete an item.
+    Eliminar un item por ID.
     """
     item = crud.item.get(db=db, id=id)
     if not item:

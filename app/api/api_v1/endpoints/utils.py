@@ -33,3 +33,7 @@ def test_email(
     """
     send_test_email(email_to=email_to)
     return {"msg": "Test email sent"}
+
+
+"""Este codigo aún no está implementado para la gestión y programación 
+de tareas asíncronas que permite el worker de Celery"""
