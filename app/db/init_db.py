@@ -4,9 +4,9 @@ from app import crud, schemas
 from app.core.config import settings
 from app.db import base  # noqa: F401
 
-# make sure all SQL Alchemy models are imported (app.db.base) before initializing DB
-# otherwise, SQL Alchemy might fail to initialize relationships properly
-# for more details: https://github.com/tiangolo/full-stack-fastapi-postgresql/issues/28
+""" Todos los modelos (.models/) de SQL Alchemy están importados (app.db.base) antes de iniciar el alembic,
+de lo contrario, SQL Alchemy podría no inicializar las relaciones correctamente"""
+
 from app.db.base_class import Base
 from app.db.session import engine
 

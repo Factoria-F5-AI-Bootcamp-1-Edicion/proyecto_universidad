@@ -24,3 +24,7 @@ with Session(bind=engine) as session:
 
     session.add_all([asignatura1, asignatura2, profesor1, profesor2, profesor3])
     session.commit()
+
+    """Este archivo sirve para insertar datos desde Python y comprobar las relaciones entre las tablas.
+    
+    Para futuras implementaciones"""

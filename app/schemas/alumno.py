@@ -2,8 +2,10 @@ from typing import Optional
 
 from pydantic import BaseModel, EmailStr
 
+"""Se crea un archivo de esquema para validar el modelo de cada entidad y 
+para cada método CRUD que se va a desarrollar para cada entidad."""
 
-# Shared properties
+# Atributos compartidos
 class AlumnoBase(BaseModel):
     email: Optional[EmailStr] = None
     nombre: Optional[str] = None
@@ -13,7 +15,7 @@ class AlumnoBase(BaseModel):
 
 
 
-# Properties to receive on item creation
+# Atributos necesarios para la creación de un item
 class AlumnoCreate(AlumnoBase):
     email: EmailStr
     # nombre: str
@@ -22,12 +24,13 @@ class AlumnoCreate(AlumnoBase):
     # edad: int
 
 
-# Properties to receive on item update
+# Atributos para actualizar un item en la base de datos a través del API
 class AlumnoUpdate(AlumnoBase):
     pass
 
 
-# Properties shared by models stored in DB
+
+# Atributos compartidos por los modelos guardados en la base de datos
 class AlumnoInDBBase(AlumnoBase):
     id: Optional[int] = None
     email: Optional[EmailStr] = None
@@ -40,11 +43,11 @@ class AlumnoInDBBase(AlumnoBase):
         orm_mode = True
 
 
-# Properties to return to client
+# Atributos adicionales para responder al cliente a través del API
 class Alumno(AlumnoInDBBase):
     pass
 
 
-# Properties properties stored in DB
+# Atributos guardados en la base de datos
 class AlumnoInDB(AlumnoInDBBase):
     pass
