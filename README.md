@@ -113,9 +113,9 @@ Se recomienda modificar modelos, endpoints y utilidades CRUD de acuerdo a tus ne
 
 Para mayor información sobre las versiones de cada librería utilizada en el desarrollo del presente proyecto, se puede consultar el fichero `requirements.txt`
 
-##Equipo:
-Andrea Sandoval
-Stephanie Valderrama
-Anghi Sánchez 
-Wenya Li
-Jonnathan Ospina
+## Equipo:
+- Andrea Sandoval
+- Stephanie Valderrama
+- Anghi Sánchez 
+- Wenya Li
+- Jonnathan Ospina
